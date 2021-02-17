@@ -9,6 +9,24 @@
     <script src="https://kit.fontawesome.com/7080cd0a09.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <div id="app" class="container" style="margin-top: 10%;">
+        <header></header>
+            <h1 class="text-center" v-text="sitename" style="margin-bottom: 5%;"></h1>
+        <div class="row">
+        
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" v-bind:src="lesson.image">
+                <div class="card-body">
+                  <h5 class="card-title">Subject : {{lesson.subject}}</h5>
+                  <p class="card-text"><b>Location : </b>{{lesson.location}}</p>
+                  <p class="card-text"><b>Price : </b>£{{lesson.price}}</p>
+                  <p class="card-text"><b> Available Spaces : </b><span></span>{{spaceCount}}</p>
+                  <button v-if="canAddToCart" v-on:click="addToCart" class="btn btn-primary">Add to cart</button>
+                <button v-else class="btn btn-primary" disabled>Add to cart</button>
+                </div>
+              </div>
+        
+            </div>
+        </div>
 </body>
 </html>
